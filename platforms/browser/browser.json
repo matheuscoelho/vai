@@ -1,0 +1,54 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "phonegap-plugin-push": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/phonegap-plugin-push/www/push.js",
+      "id": "phonegap-plugin-push.PushNotification",
+      "pluginId": "phonegap-plugin-push",
+      "clobbers": [
+        "PushNotification"
+      ]
+    },
+    {
+      "file": "plugins/phonegap-plugin-push/www/browser/push.js",
+      "id": "phonegap-plugin-push.BrowserPush",
+      "pluginId": "phonegap-plugin-push",
+      "clobbers": [
+        "PushNotification"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-battery-status/www/battery.js",
+      "id": "cordova-plugin-battery-status.battery",
+      "pluginId": "cordova-plugin-battery-status",
+      "clobbers": [
+        "navigator.battery"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-battery-status/src/browser/BatteryProxy.js",
+      "id": "cordova-plugin-battery-status.Battery",
+      "pluginId": "cordova-plugin-battery-status",
+      "runs": true
+    }
+  ],
+  "plugin_metadata": {
+    "phonegap-plugin-push": "2.1.0",
+    "cordova-plugin-battery-status": "1.2.5"
+  }
+}
