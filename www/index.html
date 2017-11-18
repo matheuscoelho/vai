@@ -51,7 +51,7 @@
         </div>
 
         <div>
-            <input id="token" type="text" value="">
+            <input id="token" type="text" value="">d
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
@@ -60,9 +60,12 @@
         app.initialize();
 
         function myPush(){
+
+            alert('0');
+
             var push = PushNotification.init({
                 android: {
-                    senderID: "186420" //id do projeto do google console
+                    senderID: "AIzaSyDcupswyWwVhS517Hl8ZLXIYUdGDX6H6dY" //id do projeto do google console
                 },
                 ios: {
                     alert: "true",
@@ -73,12 +76,15 @@
 
             });
 
+            alert('1');
             //evento dispara quando o google registra o aparelho
             push.on('registration', function(data){
+
+             alert('2');
                 //quando o google clound messaging registrar nosso device, vamos
                 //armazenar o token no nosso input
                 var input = document.getElementById('token');
-                input.value = data.registrationID;
+                input.value = data.registrationId;
             });
 
             //evento é disparado quan do uma nova notificação é enviada.
@@ -90,6 +96,7 @@
 
             //da, dispara quando um erro acontece
             push.on('error', function(e){
+            alert('err');
                 //e.message
             });
         }
